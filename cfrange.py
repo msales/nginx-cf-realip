@@ -12,11 +12,7 @@ c.perform()
 c.close()
 
 body = buffer.getvalue()
-# Body is a byte string.
-# We have to know the encoding in order to print it to a text file
-# such as standard output.
 json1_data = json.loads(body.decode('iso-8859-1'))
-#print (json1_data['prefixes'])
 print('# cloudront dynamic IP range, taken from https://ip-ranges.amazonaws.com/ip-ranges.json')
 for majorkey in json1_data['prefixes']:
     if 'CLOUDFRONT' in majorkey['service']:
